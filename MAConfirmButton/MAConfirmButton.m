@@ -60,7 +60,7 @@
 
         self.layer.needsDisplayOnBoundsChange = YES;
 
-        CGSize size = [self.disabled sizeWithFont:[UIFont boldSystemFontOfSize:kFontSize]];
+        CGSize size = [self.disabled sizeWithAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:kFontSize]}];
         CGRect r = self.frame;
         r.size.height = kHeight;
         r.size.width = size.width + kPadding;
@@ -93,7 +93,7 @@
 
         self.layer.needsDisplayOnBoundsChange = YES;
 
-        CGSize size = [self.title sizeWithFont:[UIFont boldSystemFontOfSize:kFontSize]];
+        CGSize size = [self.title sizeWithAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:kFontSize]}];
         CGRect r = self.frame;
         r.size.height = kHeight;
         r.size.width = size.width+kPadding;
@@ -129,19 +129,19 @@
             [self setTitleColor:[UIColor colorWithWhite:0.6 alpha:1] forState:UIControlStateNormal];
             [self setTitleShadowColor:[UIColor colorWithWhite:1 alpha:1] forState:UIControlStateNormal];
             self.titleLabel.shadowOffset = CGSizeMake(0, 1);
-            size = [self.disabled sizeWithFont:[UIFont boldSystemFontOfSize:kFontSize]];
+            size = [self.disabled sizeWithAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:kFontSize]}];
         }
         else if(_selected)
         {
             [self setTitle:self.confirm forState:UIControlStateNormal];
-            size = [self.confirm sizeWithFont:[UIFont boldSystemFontOfSize:kFontSize]];
+            size = [self.confirm sizeWithAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:kFontSize]}];
         }
         else
         {
             [self setTitle:self.title forState:UIControlStateNormal];
             [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [self setTitleShadowColor:[UIColor colorWithWhite:0 alpha:0.5] forState:UIControlStateNormal];
-            size = [self.title sizeWithFont:[UIFont boldSystemFontOfSize:kFontSize]];
+            size = [self.title sizeWithAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:kFontSize]}];
         }
 
         size.width += kPadding;
